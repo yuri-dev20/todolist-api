@@ -8,7 +8,8 @@ class UserCreate(UserBase):
     pass
 
 class UserUpdate(BaseModel):
-    name: str
+    name: str | None
+    password: str | None
 
 class UserOut(BaseModel):
     id: int
