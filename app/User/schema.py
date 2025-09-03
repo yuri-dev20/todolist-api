@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+from typing import Optional
 
 class UserBase(BaseModel):
     name: str
@@ -8,8 +9,8 @@ class UserCreate(UserBase):
     pass
 
 class UserUpdate(BaseModel):
-    name: str | None
-    password: str | None
+    name: Optional[str] | None
+    password: Optional[str] | None
 
 class UserOut(BaseModel):
     id: int

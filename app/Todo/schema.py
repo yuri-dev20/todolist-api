@@ -1,21 +1,23 @@
 from pydantic import BaseModel
-from typing import Any, Dict
+from typing import Any, Dict, Optional
+import datetime
 
 class TodoBase(BaseModel):
     todolist_name: str
+    created_at: datetime.datetime
     todo_list: Dict[str, Any]
 
 class TodoCreate(TodoBase):
-    user_id: int
+    pass
 
 class TodoUpdate(BaseModel):
-    todolist_name: str | None
-    todo_list: Dict[str, Any] | None
+    todo_name: Optional[str]
+    todo_description: Optional[Dict[str, Any]]
 
 class TodoOut(BaseModel):
     id: int
-    todolist_name: str
-    todo_list: Dict[str, Any]
+    todo_name: str
+    todo_description: Dict[str, Any]
     user_id: int
 
 
