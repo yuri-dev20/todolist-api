@@ -9,8 +9,8 @@ class UserCreate(UserBase):
     pass
 
 class UserUpdate(BaseModel):
-    name: Optional[str] | None
-    password: Optional[str] | None
+    name: Optional[str]
+    password: Optional[str]
 
 class UserOut(BaseModel):
     id: int
